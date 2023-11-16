@@ -1,0 +1,12 @@
+columns:
+    description:
+        label: description
+        type: text
+    task_id:
+        label: task_id
+        type: number
+        select: name
+        relation: task
+    name:
+        label: name
+        type: text

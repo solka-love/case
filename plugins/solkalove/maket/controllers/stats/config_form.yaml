@@ -1,0 +1,10 @@
+name: Stats
+form: $/solkalove/maket/models/status/fields.yaml
+modelClass: SolkaLove\Maket\Models\Status
+defaultRedirect: solkalove/maket/stats
+create:
+    redirect: 'solkalove/maket/stats/update/:id'
+    redirectClose: solkalove/maket/stats
+update:
+    redirect: solkalove/maket/stats
+    redirectClose: solkalove/maket/stats

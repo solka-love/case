@@ -1,0 +1,12 @@
+title = "profile"
+url = "/profile"
+layout = "default"
+is_hidden = 0
+
+[commentsPost]
+==
+<p>Name: {{ name }}</p>
+<p>Fil Name: {{ fil_name }}</p>
+<p>Information: {{ information }}</p>
+<img src="{{ photo }}" alt="Profile Photo">
+{% component 'commentsPost' %}

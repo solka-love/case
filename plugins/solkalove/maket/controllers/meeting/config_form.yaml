@@ -1,0 +1,10 @@
+name: Meeting
+form: $/solkalove/maket/models/meetings/fields.yaml
+modelClass: SolkaLove\Maket\Models\Meetings
+defaultRedirect: solkalove/maket/meeting
+create:
+    redirect: 'solkalove/maket/meeting/update/:id'
+    redirectClose: solkalove/maket/meeting
+update:
+    redirect: solkalove/maket/meeting
+    redirectClose: solkalove/maket/meeting

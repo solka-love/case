@@ -1,0 +1,12 @@
+list: $/solkalove/maket/models/task/columns.yaml
+modelClass: SolkaLove\Maket\Models\Task
+title: Makets
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'solkalove/maket/makets/update/:id'

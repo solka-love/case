@@ -1,0 +1,16 @@
+fields:
+    name:
+        label: Название
+        span: auto
+        type: text
+    description:
+        label: Описание
+        size: ''
+        span: auto
+        type: textarea
+    task:
+        label: Задача
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation

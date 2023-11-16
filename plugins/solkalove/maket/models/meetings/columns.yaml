@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    theme:
+        label: theme
+        type: text
+    description:
+        label: description
+        type: text
+    time:
+        label: time
+        type: text

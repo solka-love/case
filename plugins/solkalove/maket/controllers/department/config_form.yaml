@@ -1,0 +1,10 @@
+name: Department
+form: $/solkalove/maket/models/department/fields.yaml
+modelClass: SolkaLove\Maket\Models\Department
+defaultRedirect: solkalove/maket/department
+create:
+    redirect: 'solkalove/maket/department/update/:id'
+    redirectClose: solkalove/maket/department
+update:
+    redirect: solkalove/maket/department
+    redirectClose: solkalove/maket/department

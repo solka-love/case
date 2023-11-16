@@ -1,0 +1,5 @@
+fields:
+    status:
+        label: Статус
+        span: auto
+        type: text

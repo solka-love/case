@@ -1,0 +1,10 @@
+name: Employees
+form: $/solkalove/maket/models/employee/fields.yaml
+modelClass: SolkaLove\Maket\Models\Employee
+defaultRedirect: solkalove/maket/employees
+create:
+    redirect: 'solkalove/maket/employees/update/:id'
+    redirectClose: solkalove/maket/employees
+update:
+    redirect: solkalove/maket/employees
+    redirectClose: solkalove/maket/employees

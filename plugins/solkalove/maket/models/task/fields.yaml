@@ -1,0 +1,35 @@
+fields:
+    name:
+        label: Название
+        span: auto
+        type: text
+    end_at:
+        label: 'Дата окончания'
+        mode: datetime
+        span: auto
+        type: datepicker
+    status:
+        label: Статус
+        nameFrom: status
+        descriptionFrom: description
+        span: auto
+        type: relation
+    employee:
+        label: Ответственный
+        mode: relation
+        separator: comma
+        customTags: true
+        useKey: false
+        span: auto
+        type: taglist
+    discription:
+        label: Описание
+        size: ''
+        span: full
+        type: textarea
+    depend:
+        label: 'Постановщик задачи'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

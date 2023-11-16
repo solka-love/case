@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    fil_name:
+        label: fil_name
+        type: text
+    information:
+        label: information
+        type: text
+    department_id:
+        label: department_id
+        type: number
+        select: department
+        relation: department

@@ -1,0 +1,10 @@
+name: Subtasks
+form: $/solkalove/maket/models/subtasks/fields.yaml
+modelClass: SolkaLove\Maket\Models\Subtasks
+defaultRedirect: solkalove/maket/subtasks
+create:
+    redirect: 'solkalove/maket/subtasks/update/:id'
+    redirectClose: solkalove/maket/subtasks
+update:
+    redirect: solkalove/maket/subtasks
+    redirectClose: solkalove/maket/subtasks

@@ -1,0 +1,72 @@
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function loadEmployeeProfile() {
+        var selectedEmployeeId = document.getElementById("employee").value;
+
+        $.request('onProfile', {
+            data: { employee: selectedEmployeeId },
+            success: function(response) {
+                // Вставляем обновленный профиль в блок #profile-container
+                $("#profile-container").html(response['#profile-container']);
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.error("Ошибка загрузки профиля сотрудника:", textStatus, errorThrown);
+
+                // Если возникла ошибка, выведите ее в контейнер профиля
+                $("#profile-container").html("<p>Ошибка загрузки профиля сотрудника. Пожалуйста, повторите попытку позже.</p>");
+            }
+        });
+    }
+
+    function updateEmployeeList() {
+        var selectedDepartmentId = document.getElementById("department").value;
+        var employeeDropdown = document.getElementById("employee");
+
+        // Скрыть все сотрудников
+        for (var i = 0; i < employeeDropdown.options.length; i++) {
+            employeeDropdown.options[i].style.display = "none";
+        }
+
+        // Показать только сотрудников, принадлежащих выбранному отделу
+        for (var i = 0; i < employeeDropdown.options.length; i++) {
+            var option = employeeDropdown.options[i];
+            if (option.getAttribute("data-department-id") == selectedDepartmentId) {
+                option.style.display = "";
+            }
+        }
+
+        // Очистить выбранный сотрудник, чтобы не остался выбранным после смены отдела
+        employeeDropdown.value = "";
+
+        // Очистить профиль при смене отдела
+        document.getElementById("profile-container").innerHTML = "";
+    }
+</script>
+<div class="containeer">
+    <div class="search">
+        <div class="first_block">
+            <form>
+                <select id="department" name="department" multiple="multiple" size="9" class="choice" onchange="updateEmployeeList()">
+                    <option value="" selected>-------</option>
+                    {% for subdivision, departments in departmentss %}
+                        <optgroup label="{{ subdivision }}">
+                            {% for department in departments %}
+                                <option value="{{ department.id }}">{{ department.department }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <select class="employee_choice_block" id="employee" onchange="loadEmployeeProfile()">
+            <option value="" selected>-------</option>
+            {% for suka in item %}
+                <option data-department-id="{{ suka.department_id }}" value="{{ suka.id }}">{{ suka.name }} {{ suka.fil_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div id="profile-container">
+        <!-- Здесь будет отображаться профиль выбранного работника -->
+    </div>
+</div>

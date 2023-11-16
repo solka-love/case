@@ -1,0 +1,48 @@
+plugin:
+    name: 'solkalove.maket::lang.plugin.name'
+    description: 'solkalove.maket::lang.plugin.description'
+    author: solka-love
+    icon: oc-icon-simplybuilt
+    homepage: ''
+navigation:
+    Makets:
+        label: 'Menu Item'
+        url: solkalove/maket/makets
+        icon: icon-database
+        sideMenu:
+            side-menu-item:
+                label: Employee
+                url: solkalove/maket/employees
+                icon: icon-trash
+            side-menu-item2:
+                label: Status
+                url: solkalove/maket/stats
+                icon: icon-sitemap
+            side-menu-item3:
+                label: 'solkalove.maket::lang.plugin.name'
+                url: solkalove/maket/employees
+                icon: icon-sitemap
+            side-menu-item4:
+                label: Задачи
+                url: solkalove/maket/makets
+                icon: icon-sitemap
+            side-menu-item5:
+                label: Department
+                url: solkalove/maket/department
+                icon: icon-th
+            side-menu-item6:
+                label: Subvision
+                url: solkalove/maket/subvis
+                icon: icon-star-half-full
+            side-menu-item7:
+                label: Subtask
+                url: solkalove/maket/subtasks
+                icon: icon-toggle-down
+            side-menu-item8:
+                label: meetings
+                url: solkalove/maket/meeting
+                icon: icon-skype
+    main-menu-item:
+        label: 'Menu Item'
+        url: solkalove/maket/employees
+        icon: icon-life-ring

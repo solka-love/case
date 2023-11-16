@@ -1,0 +1,10 @@
+name: Subvis
+form: $/solkalove/maket/models/subvision/fields.yaml
+modelClass: SolkaLove\Maket\Models\Subvision
+defaultRedirect: solkalove/maket/subvis
+create:
+    redirect: 'solkalove/maket/subvis/update/:id'
+    redirectClose: solkalove/maket/subvis
+update:
+    redirect: solkalove/maket/subvis
+    redirectClose: solkalove/maket/subvis

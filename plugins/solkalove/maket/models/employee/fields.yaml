@@ -1,0 +1,29 @@
+fields:
+    photo:
+        label: 'Фото сотрудника'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    name:
+        label: Имя
+        span: left
+        type: text
+    fil_name:
+        label: Фамилия
+        span: auto
+        type: text
+    information:
+        label: Информация
+        span: full
+        size: ''
+        type: textarea
+    department:
+        label: Отдел
+        span: auto
+        nameFrom: department
+        descriptionFrom: description
+        type: relation

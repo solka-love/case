@@ -1,0 +1,11 @@
+fields:
+    subdivision:
+        label: department
+        nameFrom: subdivision
+        descriptionFrom: description
+        span: auto
+        type: relation
+    department:
+        label: Департамент
+        span: auto
+        type: text

@@ -1,0 +1,23 @@
+columns:
+    end_at:
+        label: end_at
+        type: datetime
+    created_at:
+        label: created_at
+        type: datetime
+    name:
+        label: 'Название задачи'
+        type: text
+    status:
+        label: 'Статус задачи'
+        type: text
+    id_leader:
+        label: Постановщик
+        type: text
+        select: name
+        relation: depend
+    employee:
+        label: Ответсвенный
+        type: text
+        select: name
+        relation: employee

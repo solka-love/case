@@ -1,0 +1,10 @@
+name: Makets
+form: $/solkalove/maket/models/task/fields.yaml
+modelClass: SolkaLove\Maket\Models\Task
+defaultRedirect: solkalove/maket/makets
+create:
+    redirect: 'solkalove/maket/makets/update/:id'
+    redirectClose: solkalove/maket/makets
+update:
+    redirect: solkalove/maket/makets
+    redirectClose: solkalove/maket/makets

@@ -1,0 +1,5 @@
+fields:
+    subdivision:
+        label: Отдел
+        span: auto
+        type: text

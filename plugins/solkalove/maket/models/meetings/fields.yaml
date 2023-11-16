@@ -1,0 +1,15 @@
+fields:
+    theme:
+        label: Тема
+        span: auto
+        type: text
+    time:
+        label: 'Время дата'
+        mode: datetime
+        span: auto
+        type: datepicker
+    description:
+        label: Описание
+        span: auto
+        size: ''
+        type: textarea

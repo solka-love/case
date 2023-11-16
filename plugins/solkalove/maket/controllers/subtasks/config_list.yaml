@@ -1,0 +1,12 @@
+list: $/solkalove/maket/models/subtasks/columns.yaml
+modelClass: SolkaLove\Maket\Models\Subtasks
+title: Subtasks
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'solkalove/maket/subtasks/update/:id'

@@ -1,0 +1,105 @@
+<div id="profile-container">
+    {% if profileData %}
+    <div class="info_block">
+        <div class="wrapper">
+            {% if profileData.photo %}
+            <img class="photo" src="{{ profileData.photo.path() }}" alt="Profile Photo" />
+            {% endif %}
+            <div class="info_employee">
+                <h2>{{ profileData.name }} {{ profileData.fil_name }}</h2>
+                <p class="information"> {{ profileData.information }}</p>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>No profile data available.</p>
+    {% endif %}
+</div>
+
+<div class="tasks">
+    <div class="head_second_block">
+        <div class="wrapper">
+            <select class="name_block_tasks" required="required" id="selectedTaskName">
+                <option value="">Задачи</option>
+                {% for task in profileData.task %}
+                <option value="{{ task.id }}">{{ task.name }}</option>
+                {% endfor %}
+            </select>
+            <button class="add">+</button>
+        </div>
+    </div>
+    <div class="main_2_block">
+        {% for task in profileData.task %}
+        <div class="task" id="task_{{ task.id }}">
+            <p class="name_task">{{ task.name }}</p>
+            <div class="attracted_employee">
+                Привлеченные сотрудники
+            </div>
+            <select class="attracted_employee" required="required">
+                {% for employee in task.employee %}
+                <option value="{{ employee.id }}">{{ employee.name }}</option>
+                {% endfor %}
+            </select>
+            <div class="sub_task">Подзадачи</div>
+            {% set subtasks = task.subtasks %}
+            {% for subtask in subtasks %}
+            <div class="dropdown-checkbox form-group attracted_employee">
+                <label class="label-title">{{subtask.name}}</label>
+                <ul>
+                    <li><label><input type="checkbox" name="type[]">{{ subtask.description }}</label></li>
+
+                </ul>
+            </div>
+            {% endfor %}
+            <div class="procent_complete">{{ task.status.name }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+<div class="plan">
+    <div class="head_3_block">
+        <div class="wrapper">
+            <p class="name_plan_block">Повестка</p>
+            <button class="add">+</button>
+        </div>
+    </div>
+    <div class="main_3b_lock">
+        <div class="subject">
+
+            {% for plan in meetings %}
+                <div class="wrapper">
+                    <p class="subject_name">{{plan.theme}}</p>
+                    <div class="subject_text">{{plan.description}}
+                        <input name="guruweba_example_checkbox" type="checkbox" />
+                        <P>{{plan.time}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class = "contineer">
+{% component 'commentsPost' %}
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#selectedTaskName").change(function () {
+            var selectedTaskId = $(this).val();
+            if (selectedTaskId) {
+                // Скрыть все блоки с классом task
+                $(".task").hide();
+
+                // Найти и показать блок с классом task, соответствующий выбранной задаче
+                $("#task_" + selectedTaskId).show();
+            } else {
+                // Скрыть все блоки с классом task, если задача не выбрана
+                $(".task").hide();
+            }
+        });
+    });
+</script>

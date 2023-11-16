@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: id
+        type: number
+    department:
+        label: department
+        type: text
+    subdivision_id:
+        label: subdivision_id
+        type: number
+        select: subdivision
+        relation: subdivision

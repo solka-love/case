@@ -1,0 +1,4 @@
+title: Makets
+modelClass: SolkaLove\Maket\Models\Task
+toolbar:
+    buttons: reorder_toolbar
